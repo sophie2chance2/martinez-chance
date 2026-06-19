@@ -23,7 +23,7 @@ For live RSVP-to-Google-Sheets support, add:
 - `RSVP_SHEET_NAME` (currently `RSVP`)
 - `GUEST_SHEET_NAME` (currently `Guest List`)
 
-Local development can use `GOOGLE_SERVICE_ACCOUNT_FILE` instead of embedding the JSON. Copy `.env.example` to `.env.local`, then provide the absolute path to your service-account file.
+For Vercel, paste the compact service-account JSON into `GOOGLE_SERVICE_ACCOUNT_JSON`. Local development can use the same variable or `GOOGLE_SERVICE_ACCOUNT_FILE`.
 
 Share the Google Sheet with the service account email. The response tab is `RSVP`; its headers match `data/google-sheets-template.csv`.
 
