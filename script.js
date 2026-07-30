@@ -87,7 +87,6 @@ lookupForm?.addEventListener("submit", async (event) => {
 });
 
 function renderHousehold(household) {
-  $("[data-household-name]").textContent = household.household;
   $("[data-guest-responses]").innerHTML = household.guests.map((guest, index) => `
     <section class="guest-response" data-guest="${index}">
       <h4>${escapeHtml(guest.name)}</h4>
