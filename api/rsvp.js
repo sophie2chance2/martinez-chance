@@ -119,11 +119,9 @@ function groupHouseholds(rows) {
     if (!groups.has(household)) groups.set(household, []);
     groups.get(household).push({
       name: row.name || row.guest_name || `${row.first_name || ""} ${row.last_name || ""}`.trim(),
-      welcomeDrinks: yes(row.welcome_drinks_invited),
-      wedding: row.wedding_invited == null || row.wedding_invited === "" ? true : yes(row.wedding_invited),
-      brunch: yes(row.brunch_invited),
-      child: yes(row.child),
-      mealType: row.meal_type || ""
+      welcomeDinnerInvited: yes(row.welcome_dinner),
+      brunchInvited: yes(row.brunch),
+      child: yes(row.child)
     });
   });
   return [...groups].map(([household, guests]) => ({ household, guests }));

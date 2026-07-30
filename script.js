@@ -94,16 +94,14 @@ function renderHousehold(household) {
         <label>Attendance / Asistencia
           <select name="attending-${index}" required><option value="">Select / Seleccionar</option><option value="Attending">Joyfully attending / Sí asistiré</option><option value="Declined">Unable to attend / No podré asistir</option></select>
         </label>
-        <label>Meal / Comida
-          <select name="meal-${index}"><option value="">Select / Seleccionar</option><option ${guest.mealType === "Carne" ? "selected" : ""}>Carne</option><option ${guest.mealType === "Pollo" ? "selected" : ""}>Pollo</option><option value="Fish" ${guest.mealType === "Fish" ? "selected" : ""}>Fish / Pescado</option><option value="Veggie" ${guest.mealType === "Veggie" ? "selected" : ""}>Veggie / Vegetariano</option></select>
-        </label>
+        ${guest.welcomeDinnerInvited ? `<label>Welcome dinner / Cena de bienvenida
+          <select name="welcome-${index}" required><option value="">Select / Seleccionar</option><option value="Attending">Joyfully attending / Sí asistiré</option><option value="Declined">Unable to attend / No podré asistir</option></select>
+        </label>` : ""}
+        ${guest.brunchInvited ? `<label>Brunch
+          <select name="brunch-${index}" required><option value="">Select / Seleccionar</option><option value="Attending">Joyfully attending / Sí asistiré</option><option value="Declined">Unable to attend / No podré asistir</option></select>
+        </label>` : ""}
       </div>
       <label>Dietary needs / Necesidades alimentarias<input name="dietary-${index}" type="text"></label>
-      <div class="event-checks">
-        ${guest.welcomeDrinks ? `<label><input type="checkbox" name="welcome-${index}" checked> Welcome drinks</label>` : ""}
-        ${guest.wedding ? `<label><input type="checkbox" name="wedding-${index}" checked> Wedding</label>` : ""}
-        ${guest.brunch ? `<label><input type="checkbox" name="brunch-${index}" checked> Brunch</label>` : ""}
-      </div>
     </section>`).join("");
 }
 
@@ -114,11 +112,10 @@ responseForm?.addEventListener("submit", async (event) => {
     household: activeHousehold.household,
     guestName: guest.name,
     attending: form.get(`attending-${index}`),
-    meal: form.get(`meal-${index}`),
     dietary: form.get(`dietary-${index}`),
-    welcomeDrinks: form.get(`welcome-${index}`) ? "Yes" : "No",
-    wedding: form.get(`wedding-${index}`) ? "Yes" : "No",
-    brunch: form.get(`brunch-${index}`) ? "Yes" : "No",
+    welcomeDrinks: guest.welcomeDinnerInvited ? form.get(`welcome-${index}`) : "",
+    wedding: form.get(`attending-${index}`),
+    brunch: guest.brunchInvited ? form.get(`brunch-${index}`) : "",
     songRequest: form.get("songRequest")
   }));
   const submission = { action: "submit", email: form.get("email"), responses };
