@@ -51,29 +51,15 @@ $("[data-close-easter]")?.addEventListener("click", () => {
   easterPanel.setAttribute("aria-hidden", "true");
 });
 
-const passwordForm = $("[data-rsvp-password]");
 const lookupForm = $("[data-rsvp-lookup]");
 const responseForm = $("[data-rsvp-response]");
 const steps = $$(".rsvp-step");
-let rsvpPassword = "";
+const rsvpPassword = "mia";
 let activeHousehold = null;
 
 function showStep(selector) {
   steps.forEach((step) => step.classList.toggle("is-active", step.matches(selector)));
 }
-
-passwordForm?.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const value = new FormData(passwordForm).get("password").trim();
-  if (value.toLowerCase() !== "mia") {
-    $("[data-password-error]").textContent = "Please check the password on your invitation. / Revisen la contraseña de su invitación.";
-    return;
-  }
-  rsvpPassword = value;
-  $("[data-password-error]").textContent = "";
-  showStep("[data-rsvp-lookup]");
-  $("#guest-name")?.focus();
-});
 
 lookupForm?.addEventListener("submit", async (event) => {
   event.preventDefault();
