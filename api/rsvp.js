@@ -8,11 +8,6 @@ export default async function handler(request, response) {
 
   try {
     const body = typeof request.body === "string" ? JSON.parse(request.body) : request.body;
-    const configuredPassword = process.env.RSVP_PASSWORD || "Mia";
-
-    if (String(body?.password || "").trim().toLowerCase() !== configuredPassword.trim().toLowerCase()) {
-      return response.status(401).json({ error: "That password does not match." });
-    }
 
     if (!process.env.GOOGLE_SHEET_ID || (!process.env.GOOGLE_SERVICE_ACCOUNT_JSON && !process.env.GOOGLE_SERVICE_ACCOUNT_FILE)) {
       return response.status(503).json({ preview: true, error: "Google Sheets is not configured yet." });

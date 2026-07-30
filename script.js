@@ -54,7 +54,6 @@ $("[data-close-easter]")?.addEventListener("click", () => {
 const lookupForm = $("[data-rsvp-lookup]");
 const responseForm = $("[data-rsvp-response]");
 const steps = $$(".rsvp-step");
-const rsvpPassword = "mia";
 let activeHousehold = null;
 
 function showStep(selector) {
@@ -70,7 +69,7 @@ lookupForm?.addEventListener("submit", async (event) => {
     const apiResponse = await fetch("/api/rsvp", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ action: "lookup", password: rsvpPassword, guestName })
+      body: JSON.stringify({ action: "lookup", guestName })
     });
     const payload = await apiResponse.json();
     if (!apiResponse.ok) throw new Error(payload.error);
@@ -123,7 +122,7 @@ responseForm?.addEventListener("submit", async (event) => {
     brunch: form.get(`brunch-${index}`) ? "Yes" : "No",
     songRequest: form.get("songRequest")
   }));
-  const submission = { action: "submit", password: rsvpPassword, email: form.get("email"), responses };
+  const submission = { action: "submit", email: form.get("email"), responses };
   try {
     const apiResponse = await fetch("/api/rsvp", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(submission) });
     if (!apiResponse.ok) throw new Error("Preview mode");
