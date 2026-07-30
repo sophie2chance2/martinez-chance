@@ -198,6 +198,13 @@ footer { display: flex; align-items: center; justify-content: space-between; min
 .rsvp-step .primary-button { margin-top: 2rem; }
 .form-note, .form-error { font-size: .7rem; line-height: 1.6; }
 .form-error { min-height: 1rem; color: #8c2828; }
+.password-gate { display: grid; place-items: center; min-height: 100vh; padding: 2rem; background: var(--green); color: var(--white); }
+.password-gate form { display: grid; width: 100%; max-width: 380px; text-align: center; }
+.password-gate h1 { margin: .5rem 0 2rem; font: 400 clamp(2rem, 5vw, 2.6rem)/1.1 var(--serif); }
+.password-gate label { margin-bottom: .5rem; font-size: .7rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+.password-gate input { width: 100%; border: 0; border-bottom: 1px solid var(--white); padding: .8rem 0; text-align: center; background: transparent; color: var(--white); outline: none; }
+.password-gate .primary-button { margin: 2rem auto 0; background: var(--white); color: var(--green); }
+.password-gate .primary-button:hover { background: transparent; color: var(--white); }
 .response-heading h3 { margin: .3rem 0 1.5rem; font: 400 2.5rem/1 var(--serif); }
 .guest-response { margin-bottom: 1.5rem; padding: 1.5rem; border: 1px solid var(--line); }
 .guest-response h4 { margin: 0 0 1rem; font: 400 1.5rem/1 var(--serif); }

@@ -1,5 +1,22 @@
 const pageName = document.body.dataset.page || "home";
 
+const SITE_PASSWORD = "mia";
+const normalizePassword = (value) => value.trim().toLowerCase().replace(/\s+/g, "");
+const siteUnlocked = localStorage.getItem("siteUnlocked") === "true";
+
+function gateScreen() {
+  return `<main class="password-gate">
+    <form data-site-password>
+      <p class="kicker">Sophie <em>&</em> Ubaldo</p>
+      <h1>Enter password<br>Ingresen la contraseña</h1>
+      <label for="site-password">Invitation password / Contraseña</label>
+      <input id="site-password" name="password" type="password" autofocus required>
+      <p class="form-error" data-site-password-error></p>
+      <button class="primary-button" type="submit">Enter / Entrar</button>
+    </form>
+  </main>`;
+}
+
 const navigation = [
   ["story", "Our Story"],
   ["schedule", "Schedule"],
@@ -129,13 +146,24 @@ const pages = {
     </main>`
 };
 
-document.body.innerHTML = `
+document.body.innerHTML = siteUnlocked ? `
   <a class="skip-link" href="#main">Skip to content</a>
   ${header()}
   ${pages[pageName] || pages.home}
   ${pageName === "rsvp" ? "" : footer()}
   ${easterEgg()}
-`;
+` : gateScreen();
+
+document.querySelector("[data-site-password]")?.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const value = normalizePassword(new FormData(event.target).get("password") || "");
+  if (value !== SITE_PASSWORD) {
+    document.querySelector("[data-site-password-error]").textContent = "Please check the password on your invitation. / Revisen la contraseña de su invitación.";
+    return;
+  }
+  localStorage.setItem("siteUnlocked", "true");
+  location.reload();
+});
 
 function header() {
   return `<header class="site-header ${pageName === "home" ? "" : "page-header"}" data-header>
