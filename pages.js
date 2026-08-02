@@ -23,7 +23,7 @@ const navigation = [
   ["travel", "Travel"],
   ["things-to-do", "Things to Do"],
   ["wedding-party", "Wedding Party"],
-  ["attire", "Funky Formal"],
+  ["attire", "Attire"],
   ["registry", "Registry"],
   ["faq", "FAQ"]
 ];
