@@ -111,9 +111,13 @@ const pages = {
       <p>Traigan el color. Usen algo que se sienta auténtico y listo para una gran pista de baile.</p>
       <div class="attire-rule"><span>Please reserve white for the bride.</span><span>Por favor, reserven el blanco para la novia.</span></div>
     </div>
-    <div class="outfit-strip">
-      <div class="outfit outfit-1"><span>Color</span></div><div class="outfit outfit-2"><span>Texture</span></div>
-      <div class="outfit outfit-3"><span>Print</span></div><div class="outfit outfit-4"><span>Personality</span></div>
+    <div class="mood-board">
+      ${moodPhoto("1.png", -3, "Lavender pleated ruffle gown")}
+      ${moodPhoto("2.png", 2, "Coral tiered ruffle gown")}
+      ${moodPhoto("3.png", -2, "Chartreuse feather-trimmed cape gown")}
+      ${moodPhoto("4.png", 3, "Olive suit with floral embroidered cuffs")}
+      ${moodPhoto("5.png", -1, "Light blue three-piece suit with patterned lining")}
+      ${moodPhoto("6.png", 2, "Cream linen suit with a floral shirt")}
     </div>`, "section-green"),
 
   registry: page("08", "Registry / Mesa de Regalos", "Your presence<br>is the present.", `
@@ -209,6 +213,7 @@ function event(day, title, en, es, date) { return `<article class="event reveal"
 function info(n, title, en, es) { return `<article class="info-card reveal"><span>${n}</span><h3>${title}</h3><p>${en}</p><p class="translation">${es}</p></article>`; }
 function hotel(letter, name) { return `<article class="hotel reveal"><div class="hotel-index">${letter}</div><div><h3>${name}</h3><p>Downtown San Diego</p><p class="translation">Booking details coming soon.<br>Detalles de reservación próximamente.</p></div><button class="circle-link" disabled>↗</button></article>`; }
 function place(art, type, title) { return `<article class="place-card reveal"><div class="place-art ${art}"></div><span>${type}</span><h3>${title}</h3><p>Recommendation coming soon.</p></article>`; }
+function moodPhoto(file, rotation, alt) { return `<figure class="mood-photo reveal" style="--rotate:${rotation}deg"><img src="/images/attire/${file}" alt="${alt}" loading="lazy"></figure>`; }
 function faq(question, en, es) { return `<details class="reveal"><summary>${question}<span>+</span></summary><div class="answer"><p>${en}</p><p>${es}</p></div></details>`; }
 function easterEgg() { return `<div class="easter-egg" data-easter-panel aria-hidden="true"><button data-close-easter aria-label="Close Mexico City note">×</button><p class="kicker">Psst...</p><h2>Mexico City<br>is calling.</h2><p>A post-wedding buddymoon is quietly taking shape. More soon—for those who find their way here.</p><p class="translation">Un viaje con amigos después de la boda está tomando forma. Más información pronto.</p></div>`; }
 function rsvpForms() {
