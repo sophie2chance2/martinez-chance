@@ -21,7 +21,6 @@ const navigation = [
   ["story", "Our Story"],
   ["schedule", "Schedule"],
   ["travel", "Travel"],
-  ["stay", "Stay"],
   ["things-to-do", "Things to Do"],
   ["wedding-party", "Wedding Party"],
   ["attire", "Funky Formal"],
@@ -85,29 +84,28 @@ const pages = {
       ${info("02", "Arrive", "Rideshare and taxis are readily available. More transportation details are coming soon.", "Hay taxis y transporte por aplicación disponibles. Más detalles pronto.")}
       ${info("03", "Celebrate", "The ceremony, cocktail hour, and reception will all take place at The Lane.", "La ceremonia, el cóctel y la recepción serán en The Lane.")}
     </div>
-    <div class="venue-inline reveal"><div class="placeholder-photo placeholder-photo--venue"><span>The Lane · San Diego</span></div></div>`, "section-cement"),
-
-  stay: page("05", "Stay / Hospedaje", "Make a weekend<br>of it.", `
+    <div class="venue-inline reveal"><div class="placeholder-photo placeholder-photo--venue"><span>The Lane · San Diego</span></div></div>
+    <div class="sub-heading reveal"><p class="kicker">Stay / Hospedaje</p><h2>Make a weekend<br>of it.</h2></div>
     <div class="hotel-list">
       ${hotel("A", "InterContinental<br>San Diego")}
       ${hotel("B", "Residence Inn<br>San Diego Downtown")}
-    </div>`),
+    </div>`, "section-cement"),
 
-  "things-to-do": page("06", "Our San Diego / Nuestro San Diego", "A few places<br>we think you’ll love.", `
+  "things-to-do": page("05", "Our San Diego / Nuestro San Diego", "A few places<br>we think you’ll love.", `
     <div class="place-grid">
       ${place("art-coffee", "Eat / Comer", "Our favorite dinner")}
       ${place("art-coast", "See / Ver", "A coastal afternoon")}
       ${place("art-drink", "Drink / Tomar", "One more round")}
     </div>`, "section-dark"),
 
-  "wedding-party": page("07", "Wedding Party / Cortejo", "Our people.", `
+  "wedding-party": page("06", "Wedding Party / Cortejo", "Our people.", `
     <p class="translation page-intro">Photos and introductions coming soon.<br>Fotos y presentaciones próximamente.</p>
     <div class="party-grid">
       <div class="party-column"><h3>Bridesmaids</h3><div class="portrait-grid" data-party="bridesmaids"></div></div>
       <div class="party-column"><h3>Groomsmen</h3><div class="portrait-grid" data-party="groomsmen"></div></div>
     </div>`),
 
-  attire: page("08", "What to Wear / Qué Ponerse", "Funky<br>Formal.", `
+  attire: page("07", "What to Wear / Qué Ponerse", "Funky<br>Formal.", `
     <div class="attire-copy reveal">
       <p>Bring the color. Wear something that feels like you—and feels ready for a very good dance floor.</p>
       <p>Traigan el color. Usen algo que se sienta auténtico y listo para una gran pista de baile.</p>
@@ -118,13 +116,13 @@ const pages = {
       <div class="outfit outfit-3"><span>Print</span></div><div class="outfit outfit-4"><span>Personality</span></div>
     </div>`, "section-green"),
 
-  registry: page("09", "Registry / Mesa de Regalos", "Your presence<br>is the present.", `
+  registry: page("08", "Registry / Mesa de Regalos", "Your presence<br>is the present.", `
     <div class="bilingual-copy reveal page-intro">
       <p>We’re still putting the finishing touches on our registry. More soon.</p>
       <p>Aún estamos preparando nuestra mesa de regalos. Más información pronto.</p>
     </div>`, "registry"),
 
-  faq: page("10", "Good to Know / Información Útil", "Questions,<br>answered.", `
+  faq: page("09", "Good to Know / Información Útil", "Questions,<br>answered.", `
     <div class="accordion">
       ${faq("Can I bring a plus-one?", "Plus-ones are invited only when named on your invitation.", "Los acompañantes están invitados únicamente cuando aparecen en la invitación.")}
       ${faq("Are children invited?", "We are selectively inviting children. Your RSVP will show every invited member of your household.", "Algunos niños están invitados. El RSVP mostrará a cada persona invitada de su familia.")}
@@ -190,12 +188,11 @@ function page(number, kicker, title, content, extra = "") {
     "02": ["story.jpg", "Sophie and Ubaldo beneath purple flowering trees"],
     "03": ["schedule.jpg", "Sophie and Ubaldo posing beside a bright red city kiosk"],
     "04": ["travel.jpg", "Sophie and Ubaldo walking hand in hand across a city street"],
-    "05": ["stay.jpg", "Sophie and Ubaldo together on architectural steps"],
-    "06": ["things-to-do.jpg", "Sophie and Ubaldo sharing a playful restaurant moment"],
-    "07": ["wedding-party.jpg", "An intimate portrait of Sophie and Ubaldo"],
-    "08": ["attire.jpg", "A fashion-forward black and white portrait of Sophie and Ubaldo"],
-    "09": ["registry.jpg", "Sophie and Ubaldo in a black and white architectural portrait"],
-    "10": ["faq.jpg", "A close portrait of Sophie and Ubaldo smiling together"]
+    "05": ["things-to-do.jpg", "Sophie and Ubaldo sharing a playful restaurant moment"],
+    "06": ["wedding-party.jpg", "An intimate portrait of Sophie and Ubaldo"],
+    "07": ["attire.jpg", "A fashion-forward black and white portrait of Sophie and Ubaldo"],
+    "08": ["registry.jpg", "Sophie and Ubaldo in a black and white architectural portrait"],
+    "09": ["faq.jpg", "A close portrait of Sophie and Ubaldo smiling together"]
   };
   const photo = pagePhotos[number];
   return `<main id="main" class="inner-page ${extra}">

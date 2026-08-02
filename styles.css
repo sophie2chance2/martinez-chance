@@ -109,7 +109,6 @@ button { color: inherit; }
 .info-card h3 { margin: 8rem 0 1.3rem; font: 400 2.8rem/1 var(--serif); }
 .info-card p { font-size: .85rem; line-height: 1.7; }
 
-.stay .section-heading { margin-bottom: 5rem; }
 .hotel-list { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .hotel { display: grid; grid-template-columns: auto 1fr auto; gap: 2rem; min-height: 350px; padding: 2.5rem; }
 .hotel + .hotel { border-left: 1px solid var(--line); }
@@ -233,7 +232,6 @@ footer { display: flex; align-items: center; justify-content: space-between; min
 .inner-page .page-photo img[src$="story.jpg"] { object-position: center 57%; }
 .inner-page .page-photo img[src$="schedule.jpg"] { object-position: center 64%; }
 .inner-page .page-photo img[src$="travel.jpg"] { object-position: center 68%; }
-.inner-page .page-photo img[src$="stay.jpg"] { object-position: center 55%; }
 .inner-page .page-photo img[src$="things-to-do.jpg"] { object-position: center 58%; }
 .inner-page .page-photo img[src$="wedding-party.jpg"] { object-position: center 34%; }
 .inner-page .page-photo img[src$="attire.jpg"] { object-position: center 54%; }
@@ -245,6 +243,8 @@ footer { display: flex; align-items: center; justify-content: space-between; min
 .inner-page.registry .page-masthead, .inner-page.registry .page-content { background: var(--cream); }
 .page-content .timeline, .page-content .event-list, .page-content .travel-cards, .page-content .hotel-list, .page-content .place-grid, .page-content .party-grid, .page-content .accordion { margin-top: 0; }
 .page-intro { margin: 0 0 4rem; }
+.sub-heading { margin: 6rem 0 3rem; }
+.sub-heading h2 { margin: .3rem 0 0; font: 400 clamp(2.6rem, 5vw, 4.2rem)/1 var(--serif); }
 .venue-inline { height: 62vh; margin-top: 6rem; }
 .venue-inline .placeholder-photo { width: 100%; height: 100%; }
 .rsvp-page { min-height: 100vh; padding-top: 76px; background: var(--cream); }
