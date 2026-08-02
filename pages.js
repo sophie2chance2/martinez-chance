@@ -63,11 +63,60 @@ const pages = {
     </main>`,
 
   story: page("02", "Our Story / Nuestra Historia", "A few chapters<br>before forever.", `
-    <div class="timeline">
-      ${timelineCard("01", "Childhood photo", "Two beginnings", "Our stories start here. More soon.", "Nuestras historias comienzan aquí. Más información pronto.", "tone-stone")}
-      ${timelineCard("02", "Early days", "The day we met", "A chapter we’ll fill in together.", "Un capítulo que completaremos juntos.", "tone-green")}
-      ${timelineCard("03", "Candid photo", "Life, lately", "Trips, ordinary Tuesdays, and Mia.", "Viajes, martes cotidianos y Mia.", "tone-cement")}
-      ${timelineCard("04", "Engagement photo", "We said yes", "September 27, 2025.", "27 de septiembre de 2025.", "tone-warm")}
+    <div class="story-chapters">
+      ${storyChapter("01", "Before We Were Dating", "Antes de Ser Novios", "San Diego State University",
+        "Long before it was a love story, it was just two names that kept turning up on the same rosters. Three-plus years of student government and executive boards, Camp Kesem, Dance Marathon, Rotaract, Associated Students, meant late nights on campus and no version of college life that didn't include the other one. We shared a fence on Dorothy Lane, a COVID pod, and a trip halfway around the world to the Middle East and Turkey. We even had a plan, half joke and half serious, to move to South America together after graduation. Just friends, we said. Just friends who couldn't stay out of each other's plans.",
+        "Mucho antes de ser una historia de amor, éramos solo dos nombres que aparecían una y otra vez en las mismas listas. Más de tres años en gobierno estudiantil y juntas directivas, Camp Kesem, Dance Marathon, Rotaract, Associated Students, significaban noches largas en el campus y ninguna versión de la universidad que no incluyera al otro. Compartimos una cerca en Dorothy Lane, un pod de COVID y un viaje al otro lado del mundo, a Medio Oriente y Turquía. Incluso teníamos un plan, mitad broma y mitad en serio, de mudarnos juntos a Sudamérica después de graduarnos. Solo amigos, decíamos. Solo amigos que no podían mantenerse fuera de los planes del otro.",
+        [
+          ["stone", "Camp Kesem", "story/beforedating/Kesem.jpeg", "tall"],
+          ["cement", "Rotaract", "story/beforedating/Rotaract.jpeg", "tall"],
+          ["warm", "Associated Students", "story/beforedating/AssociatedStudents.jpeg", "portrait"],
+          ["green", "Snow Days", "story/beforedating/snowdays.jpeg", "portrait"],
+          ["cement", "The Middle East", "story/beforedating/MiddleEast.jpeg", "tall"],
+          ["warm", "The SoCal Challenge", "story/beforedating/SoCalChallenge.jpeg", "portrait"],
+          ["stone", "The COVID pod", "story/beforedating/CovidPod.jpeg", "tall"]
+        ],
+        "For three years, everyone could see it. It took us three years to catch up.",
+        "Durante tres años, todos lo veían venir. A nosotros nos tomó tres años darnos cuenta."
+      )}
+      ${storyChapter("02", "The Trial Period", "El Período de Prueba", "Tulum → April 3, 2021",
+        "Three years of “are you two together yet?” finally caught up with us on a trip to Tulum: twenty-some friends, one all-inclusive, and a newlywed discount that gave Ubaldo an idea. “What if we just got a marriage certificate?” he said. “We're not even dating,” I laughed. “Maybe we should try,” he said back. So we did: five days, no promises, friendship fully protected in case it all went wrong. It didn't. Three weeks later, on the very last day of the trip, Ubaldo asked me to be his girlfriend. Twelve days after that, we said I love you for the first time. That spring, we graduated from San Diego State together. Four months after Ubaldo asked, we were living in Mexico City, knowing no one in the whole city but each other.",
+        "Tres años de “¿ustedes ya andan?” finalmente nos alcanzaron en un viaje a Tulum: más de veinte amigos, un todo incluido, y un descuento de recién casados que le dio una idea a Ubaldo. “¿Qué tal si sacamos un acta de matrimonio?”, dijo. “Ni siquiera estamos saliendo”, me reí. “Tal vez deberíamos intentarlo”, respondió. Así que lo hicimos: cinco días, sin promesas, con la amistad totalmente protegida por si todo salía mal. No salió mal. Tres semanas después, el último día del viaje, Ubaldo me pidió ser su novia. Doce días después, nos dijimos te amo por primera vez. Esa primavera, nos graduamos juntos de San Diego State. Cuatro meses después de que Ubaldo me lo pidiera, vivíamos en Ciudad de México, sin conocer a nadie más que el uno al otro.",
+        [
+          ["warm", "Tulum", "story/trial/Tulum.jpeg", "portrait"],
+          ["green", "The trial", "story/trial/TrialDates.jpeg", "portrait"],
+          ["warm", "I love you", "story/trial/ILoveYou.jpeg", "portrait"],
+          ["stone", "Graduation", "story/trial/Graduation.jpeg", "portrait"]
+        ],
+        "Six years to the day, we chose that date again, this time to say “I do.”",
+        "Seis años después, el mismo día exacto, elegimos esa fecha otra vez, esta vez para decir “sí, acepto.”"
+      )}
+      ${storyChapter("03", "Home Is Wherever", "El Hogar Es Donde Estemos", "Nine Months, Seven Countries",
+        "We spent our first year of dating with no fixed address and no complaints. Mexico City was home base, but home also looked like Michoacán, meeting Ubaldo's family for the first time; Oaxaca, for a Thanksgiving that didn't need a table full of relatives to feel like one; and Sayulita, where the ocean did most of the talking. Then came Chile, Ecuador, Peru, Colombia, and Honduras (that last one with fifteen friends who somehow found their way into the story too) while we worked remotely from wherever we'd landed that week. Nine months later, we came back to Bird Rock, San Diego, and a month after that, Mia came home with us. Not long after, Sophie bought and renovated a condo in Mission Valley, the first place that was really, fully, just ours.",
+        "Pasamos nuestro primer año de novios sin dirección fija y sin ninguna queja. Ciudad de México era nuestra base, pero el hogar también se veía como Michoacán, conociendo a la familia de Ubaldo por primera vez; Oaxaca, para un Día de Acción de Gracias que no necesitó una mesa llena de parientes para sentirse como tal; y Sayulita, donde el mar hablaba por nosotros. Después llegaron Chile, Ecuador, Perú, Colombia y Honduras (este último con quince amigos que de alguna manera también encontraron su lugar en la historia) mientras trabajábamos remotamente desde donde fuera que estuviéramos esa semana. Nueve meses después, regresamos a Bird Rock, San Diego, y un mes más tarde, Mia llegó a casa con nosotros. Poco después, Sophie compró y remodeló un condominio en Mission Valley, el primer lugar que fue de verdad, completamente, solo nuestro.",
+        [
+          ["green", "Mexico City", "story/travel/Mexico.jpeg", "portrait"],
+          ["warm", "Michoacán", "story/travel/Michoacan.jpeg", "tall"],
+          ["cement", "Sayulita", "story/travel/Sayulita.jpeg", "tall"],
+          ["green", "Chile · Ecuador · Peru", "story/travel/Chile.jpeg", "portrait"],
+          ["warm", "Colombia", "story/travel/Columbia.jpeg", "portrait"],
+          ["green", "Mia", "story/travel/WelcomeMia.jpeg", "portrait"],
+          ["warm", "Mission Valley", "story/travel/MissionValleyHome.jpeg", "portrait"]
+        ],
+        "Nine months, seven countries, one very good dog.",
+        "Nueve meses, siete países y una perrita maravillosa."
+      )}
+      ${storyChapter("04", "To Today", "Hasta Hoy", "2023 – 2026",
+        "Grad school brought hackathons and a new network across the Bay Area, which brought Sophie a job at a San Francisco AI startup, which brought us both back up the coast: closer to family, closer to work, closer, it turned out, to everything we didn't know was coming. On September 27, 2025, Ubaldo got down on one knee at the Palace of Fine Arts in San Francisco. Sixty of our favorite people were already there, hiding in plain sight, waiting to turn the moment into a party the second Sophie said yes. In May 2026, we bought a house in Walnut Creek, the kind of home you buy when you already know where the rest of your life is headed.",
+        "La maestría trajo hackathons y una nueva red de contactos por toda el Área de la Bahía, lo que le trajo a Sophie un trabajo en una startup de IA en San Francisco, lo que nos trajo de regreso a la costa: más cerca de la familia, más cerca del trabajo, más cerca, resultó ser, de todo lo que no sabíamos que se aproximaba. El 27 de septiembre de 2025, Ubaldo se arrodilló en el Palace of Fine Arts en San Francisco. Sesenta de nuestras personas favoritas ya estaban ahí, escondidas a plena vista, esperando para convertir el momento en una fiesta en cuanto Sophie dijo que sí. En mayo de 2026, compramos una casa en Walnut Creek, el tipo de casa que compras cuando ya sabes hacia dónde va el resto de tu vida.",
+        [
+          ["stone", "Grad school", "story/today/graduation.jpeg", "tall"],
+          ["warm", "Palace of Fine Arts", "story/today/Proposal.jpeg", "portrait"],
+          ["green", "Walnut Creek", "story/today/WalnutCreekHome.jpeg", "portrait"]
+        ],
+        "And now, back to San Diego, where it all began, for one more chapter, and then forever.",
+        "Y ahora, de vuelta a San Diego, donde todo comenzó, para un capítulo más, y después, para siempre."
+      )}
     </div>`, "section-dark"),
 
   schedule: page("03", "The Weekend / El Fin de Semana", "Three days.<br>One very good time.", `
@@ -206,8 +255,30 @@ function page(number, kicker, title, content, extra = "") {
     ${closing()}</main>`;
 }
 
-function timelineCard(n, image, title, en, es, tone) {
-  return `<article class="timeline-item reveal"><div class="timeline-year">${n}</div><div class="placeholder-photo placeholder-photo--story ${tone}"><span>${image}</span></div><div><h3>${title}</h3><p>${en}</p><p class="translation">${es}</p></div></article>`;
+function storyChapter(number, titleEn, titleEs, date, introEn, introEs, moments, noteEn, noteEs) {
+  const sizePattern = ["tall", "normal", "normal", "wide", "normal", "tall", "normal", "wide", "normal", "normal"];
+  return `<article class="story-chapter">
+    <div class="story-chapter-head">
+      <span class="story-chapter-number">${number}</span>
+      <h2>${titleEn}</h2>
+      <span class="story-chapter-date">${date}</span>
+      <p class="story-chapter-es">${titleEs}</p>
+    </div>
+    <div class="bilingual-copy reveal story-chapter-intro">
+      <p>${introEn}</p>
+      <p class="translation">${introEs}</p>
+    </div>
+    <div class="story-moments">
+      ${moments.map(([tone, caption, photo, size], i) => storyMoment(tone, caption, size || sizePattern[i % sizePattern.length], photo)).join("")}
+    </div>
+    <p class="story-note reveal">${noteEn}<span class="translation">${noteEs}</span></p>
+  </article>`;
+}
+function storyMoment(tone, caption, size, photo) {
+  const media = photo
+    ? `<figure class="story-photo"><img src="/images/${photo}" alt="${caption}" loading="lazy"><figcaption>${caption}</figcaption></figure>`
+    : `<div class="placeholder-photo tone-${tone}"><span>${caption}</span></div>`;
+  return `<div class="story-moment story-moment--${size} reveal">${media}</div>`;
 }
 function event(day, title, en, es, date) { return `<article class="event reveal"><p class="event-day">${day}</p><div><h3>${title}</h3><p>${en}</p><p class="translation">${es}</p></div><span>${date}</span></article>`; }
 function info(n, title, en, es) { return `<article class="info-card reveal"><span>${n}</span><h3>${title}</h3><p>${en}</p><p class="translation">${es}</p></article>`; }
