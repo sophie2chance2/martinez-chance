@@ -46,6 +46,7 @@ export default async function handler(request, response) {
         clean(entry.brunch),
         clean(entry.meal),
         clean(entry.dietary),
+        clean(entry.birthday),
         clean(body.email),
         clean(body.addressStreet),
         clean(body.addressCity),
@@ -53,7 +54,7 @@ export default async function handler(request, response) {
         clean(body.addressZip)
       ]);
 
-      await appendRows(token, `${quoteSheet(rsvpSheet)}!A:N`, values);
+      await appendRows(token, `${quoteSheet(rsvpSheet)}!A:O`, values);
       return response.status(200).json({ ok: true });
     }
 
