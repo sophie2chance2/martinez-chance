@@ -286,7 +286,7 @@ footer { display: flex; align-items: center; justify-content: space-between; min
   .site-header { height: 64px; padding: 0 1.25rem; }
   .site-nav { padding-left: 1.5rem; padding-right: 1.5rem; font-size: clamp(1.75rem, 4.2vh, 2.25rem); }
   .hero-art__sun { width: 80vw; right: -30vw; top: 8vh; }
-  .hero-art__frame { width: 58vw; height: 43vh; right: -8vw; top: 29vh; transform: rotate(3deg); opacity: .6; }
+  .hero-art__frame { width: 58vw; height: 40vh; right: -8vw; top: 40vh; transform: rotate(3deg); opacity: .6; }
   .hero-photo { object-position: 55% 70%; }
   .hero-art__line { left: 72%; }
   .hero-copy { width: 100%; padding: 8rem 1.25rem 5rem; justify-content: flex-start; }
