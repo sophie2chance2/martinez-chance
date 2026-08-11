@@ -131,7 +131,7 @@ const pages = {
       ${info("02", "Arrive", "Rideshare and taxis are readily available. More transportation details are coming soon.", "Hay taxis y transporte por aplicación disponibles. Más detalles pronto.")}
       ${info("03", "Celebrate", "The ceremony, cocktail hour, and reception will all take place at The Lane.", "La ceremonia, el cóctel y la recepción serán en The Lane.")}
     </div>
-    <div class="venue-inline reveal"><div class="placeholder-photo placeholder-photo--venue"><span>The Lane · San Diego</span></div></div>
+    <div class="venue-inline reveal"><figure class="venue-photo"><img src="/images/venue/TheLane.webp" alt="The Lane, the wedding ceremony and reception venue in San Diego" loading="lazy"></figure></div>
     <div class="sub-heading reveal"><p class="kicker">Stay / Hospedaje</p><h2>Make a weekend<br>of it.</h2></div>
     <div class="hotel-list">
       ${hotel("A", "InterContinental<br>San Diego")}
