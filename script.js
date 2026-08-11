@@ -122,31 +122,23 @@ function renderHousehold(household) {
         </label>` : ""}
       </div>
       <label>Dietary needs / Necesidades alimentarias<input name="dietary-${index}" type="text"></label>
-      <label>Birthday (month &amp; day, optional) / Cumpleaños (mes y día, opcional)</label>
-      <div class="guest-row birthday-row">
-        <select name="birthday-month-${index}" aria-label="Birthday month / Mes de cumpleaños"><option value="">Month / Mes</option><option value="01">January / Enero</option><option value="02">February / Febrero</option><option value="03">March / Marzo</option><option value="04">April / Abril</option><option value="05">May / Mayo</option><option value="06">June / Junio</option><option value="07">July / Julio</option><option value="08">August / Agosto</option><option value="09">September / Septiembre</option><option value="10">October / Octubre</option><option value="11">November / Noviembre</option><option value="12">December / Diciembre</option></select>
-        <input name="birthday-day-${index}" type="number" min="1" max="31" placeholder="Day / Día" aria-label="Birthday day / Día de cumpleaños">
-      </div>
+      <label>Birthday / Cumpleaños<input name="birthday-${index}" type="text" inputmode="numeric" placeholder="MM/DD" pattern="(0?[1-9]|1[0-2])/(0?[1-9]|[12][0-9]|3[01])" maxlength="5"></label>
     </section>`).join("");
 }
 
 responseForm?.addEventListener("submit", async (event) => {
   event.preventDefault();
   const form = new FormData(responseForm);
-  const responses = activeHousehold.guests.map((guest, index) => {
-    const birthdayMonth = form.get(`birthday-month-${index}`);
-    const birthdayDay = form.get(`birthday-day-${index}`);
-    return {
-      household: activeHousehold.household,
-      guestName: guest.name,
-      attending: form.get(`attending-${index}`),
-      dietary: form.get(`dietary-${index}`),
-      birthday: birthdayMonth && birthdayDay ? `${birthdayMonth}/${String(birthdayDay).padStart(2, "0")}` : "",
-      welcomeDrinks: guest.welcomeDinnerInvited ? form.get(`welcome-${index}`) : "",
-      wedding: form.get(`attending-${index}`),
-      brunch: guest.brunchInvited ? form.get(`brunch-${index}`) : ""
-    };
-  });
+  const responses = activeHousehold.guests.map((guest, index) => ({
+    household: activeHousehold.household,
+    guestName: guest.name,
+    attending: form.get(`attending-${index}`),
+    dietary: form.get(`dietary-${index}`),
+    birthday: form.get(`birthday-${index}`),
+    welcomeDrinks: guest.welcomeDinnerInvited ? form.get(`welcome-${index}`) : "",
+    wedding: form.get(`attending-${index}`),
+    brunch: guest.brunchInvited ? form.get(`brunch-${index}`) : ""
+  }));
   const submission = {
     action: "submit",
     email: form.get("email"),
