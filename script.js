@@ -138,7 +138,7 @@ responseForm?.addEventListener("submit", async (event) => {
     brunch: guest.brunchInvited ? form.get(`brunch-${index}`) : "",
     songRequest: form.get("songRequest")
   }));
-  const submission = { action: "submit", email: form.get("email"), responses };
+  const submission = { action: "submit", email: form.get("email"), address: form.get("address"), responses };
   try {
     const apiResponse = await fetch("/api/rsvp", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(submission) });
     if (!apiResponse.ok) throw new Error("Preview mode");
