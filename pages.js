@@ -21,7 +21,6 @@ const navigation = [
   ["story", "Our Story"],
   ["schedule", "Schedule"],
   ["travel", "Travel"],
-  ["wedding-party", "Wedding Party"],
   ["attire", "Attire"],
   ["registry", "Registry"],
   ["faq", "FAQ"]
@@ -138,12 +137,7 @@ const pages = {
       ${hotel("A", "InterContinental<br>San Diego")}
       ${hotel("B", "Residence Inn<br>San Diego Downtown")}
     </div>
-    <div class="sub-heading reveal"><p class="kicker">Our San Diego / Nuestro San Diego</p><h2>A few places<br>we think you’ll love.</h2></div>
-    <div class="place-grid">
-      ${place("art-coffee", "Eat / Comer", "Our favorite dinner")}
-      ${place("art-coast", "See / Ver", "A coastal afternoon")}
-      ${place("art-drink", "Drink / Tomar", "One more round")}
-    </div>`, "section-cement"),
+    `, "section-cement"),
 
   "wedding-party": page("05", "Wedding Party / Cortejo", "Our people.", `
     <p class="translation page-intro">Introductions coming soon.<br>Presentaciones próximamente.</p>
