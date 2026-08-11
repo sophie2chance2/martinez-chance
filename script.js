@@ -111,13 +111,13 @@ function renderHousehold(household) {
     <section class="guest-response" data-guest="${index}">
       <h4>${escapeHtml(guest.name)}</h4>
       <div class="guest-row">
-        <label>Wedding / Boda
+        <label>Saturday · Wedding / Sábado · Boda
           <select name="attending-${index}" required><option value="">Select / Seleccionar</option><option value="Attending">Joyfully attending / Sí asistiré</option><option value="Declined">Unable to attend / No podré asistir</option></select>
         </label>
-        ${guest.welcomeDinnerInvited ? `<label>Welcome dinner / Cena de bienvenida
+        ${guest.welcomeDinnerInvited ? `<label>Friday · Welcome dinner / Viernes · Cena de bienvenida
           <select name="welcome-${index}" required><option value="">Select / Seleccionar</option><option value="Attending">Joyfully attending / Sí asistiré</option><option value="Declined">Unable to attend / No podré asistir</option></select>
         </label>` : ""}
-        ${guest.brunchInvited ? `<label>Brunch
+        ${guest.brunchInvited ? `<label>Sunday · Brunch / Domingo · Brunch
           <select name="brunch-${index}" required><option value="">Select / Seleccionar</option><option value="Attending">Joyfully attending / Sí asistiré</option><option value="Declined">Unable to attend / No podré asistir</option></select>
         </label>` : ""}
       </div>
