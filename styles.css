@@ -213,6 +213,8 @@ footer { display: flex; align-items: center; justify-content: space-between; min
 .password-gate input { width: 100%; border: 0; border-bottom: 1px solid var(--white); padding: .8rem 0; text-align: center; background: transparent; color: var(--white); outline: none; }
 .password-gate .primary-button { margin: 2rem auto 0; background: var(--white); color: var(--green); }
 .password-gate .primary-button:hover { background: transparent; color: var(--white); }
+.response-heading { margin: 2.5rem 0 1rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
+.response-heading:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
 .guest-response { margin-bottom: 1.5rem; padding: 1.5rem; border: 1px solid var(--line); }
 .guest-response h4 { margin: 0 0 1rem; font: 400 1.5rem/1 var(--serif); }
 .guest-row { display: grid; grid-template-columns: 1fr; gap: 1rem; }

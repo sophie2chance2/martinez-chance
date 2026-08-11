@@ -135,10 +135,17 @@ responseForm?.addEventListener("submit", async (event) => {
     dietary: form.get(`dietary-${index}`),
     welcomeDrinks: guest.welcomeDinnerInvited ? form.get(`welcome-${index}`) : "",
     wedding: form.get(`attending-${index}`),
-    brunch: guest.brunchInvited ? form.get(`brunch-${index}`) : "",
-    songRequest: form.get("songRequest")
+    brunch: guest.brunchInvited ? form.get(`brunch-${index}`) : ""
   }));
-  const submission = { action: "submit", email: form.get("email"), address: form.get("address"), responses };
+  const submission = {
+    action: "submit",
+    email: form.get("email"),
+    addressStreet: form.get("addressStreet"),
+    addressCity: form.get("addressCity"),
+    addressState: form.get("addressState"),
+    addressZip: form.get("addressZip"),
+    responses
+  };
   try {
     const apiResponse = await fetch("/api/rsvp", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(submission) });
     if (!apiResponse.ok) throw new Error("Preview mode");
