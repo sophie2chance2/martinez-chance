@@ -113,8 +113,8 @@ const pages = {
           ["warm", "Palace of Fine Arts", "story/today/Proposal.jpeg", "portrait"],
           ["green", "Walnut Creek", "story/today/WalnutCreekHome.jpeg", "portrait"]
         ],
-        "And now, back to San Diego, where it all began, for one more chapter, and then forever.",
-        "Y ahora, de vuelta a San Diego, donde todo comenzó, para un capítulo más, y después, para siempre."
+        "And now, in Walnut Creek, for our next chapter, in our new home.",
+        "Y ahora, en Walnut Creek, para nuestro próximo capítulo, en nuestro nuevo hogar."
       )}
     </div>`, "section-dark"),
 
