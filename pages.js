@@ -158,7 +158,6 @@ const pages = {
       ${moodPhoto("3.png", -2, "Chartreuse feather-trimmed cape gown")}
       ${moodPhoto("4.png", 3, "Olive suit with floral embroidered cuffs")}
       ${moodPhoto("5.png", -1, "Light blue three-piece suit with patterned lining")}
-      ${moodPhoto("6.png", 2, "Cream linen suit with a floral shirt")}
     </div>`, "section-green"),
 
   registry: page("07", "Registry / Mesa de Regalos", "Your presence<br>is the present.", `
