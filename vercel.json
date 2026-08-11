@@ -30,6 +30,11 @@
       "headers": { "Location": "/travel" }
     },
     {
+      "src": "/things-to-do",
+      "status": 308,
+      "headers": { "Location": "/travel" }
+    },
+    {
       "src": "/([^./]+)",
       "dest": "/$1/index.html"
     }

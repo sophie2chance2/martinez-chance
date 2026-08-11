@@ -26,19 +26,39 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 $$(".reveal").forEach((element) => revealObserver.observe(element));
 
-function renderParty(selector, label) {
+const BRIDESMAIDS = [
+  { name: "Alexis", file: "Alexis.jpeg" },
+  { name: "Cami", file: "Cami.jpeg" },
+  { name: "Faith", file: "Faith.jpeg" },
+  { name: "Landon", file: "Landon.jpeg" },
+  { name: "Maddy", file: "Maddy.jpeg" },
+  { name: "Madelyn", file: "Madelyn.jpeg" },
+  { name: "Paris", file: "Paris.PNG" },
+  { name: "Rachael", file: "Rachael.JPG" },
+  { name: "Rocio", file: "Rocio.jpeg" },
+  { name: "Setareh", file: "Setareh.jpg" },
+];
+
+function renderParty(selector, label, people) {
   const container = $(selector);
   if (!container) return;
-  container.innerHTML = Array.from({ length: 10 }, (_, index) => `
-    <article class="portrait reveal">
-      <div class="portrait-art" aria-hidden="true"></div>
-      <strong>${label} ${String(index + 1).padStart(2, "0")}</strong>
-      <span>Introduction coming soon</span>
-    </article>
-  `).join("");
+  container.innerHTML = people
+    ? people.map((person) => `
+      <article class="portrait reveal">
+        <div class="portrait-art portrait-art--photo"><img src="/images/bridesmaids/${person.file}" alt="${person.name}" loading="lazy"></div>
+        <strong>${person.name}</strong>
+      </article>
+    `).join("")
+    : Array.from({ length: 10 }, (_, index) => `
+      <article class="portrait reveal">
+        <div class="portrait-art" aria-hidden="true"></div>
+        <strong>${label} ${String(index + 1).padStart(2, "0")}</strong>
+        <span>Introduction coming soon</span>
+      </article>
+    `).join("");
   $$(".reveal", container).forEach((element) => revealObserver.observe(element));
 }
-renderParty('[data-party="bridesmaids"]', "Bridesmaid");
+renderParty('[data-party="bridesmaids"]', "Bridesmaid", BRIDESMAIDS);
 renderParty('[data-party="groomsmen"]', "Groomsman");
 
 const easterPanel = $("[data-easter-panel]");
