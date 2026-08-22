@@ -113,7 +113,6 @@ function renderHousehold(household) {
   $("#rsvp-address-city").value = existing.addressCity || "";
   $("#rsvp-address-state").value = existing.addressState || "";
   $("#rsvp-address-zip").value = existing.addressZip || "";
-  $("#rsvp-email").value = existing.email || "";
   $("[data-guest-responses]").innerHTML = `${hasExisting ? `<p class="form-note rsvp-existing">We found your RSVP. Review your answers below, make any changes, then send your updated response.<br>Encontramos su RSVP. Revisen sus respuestas, hagan cambios y envíen la actualización.</p>` : ""}${household.guests.map((guest, index) => {
     const previous = guest.existingRsvp || {};
     return `
@@ -132,6 +131,7 @@ function renderHousehold(household) {
       </div>
       <label>Dietary needs / Necesidades alimentarias<input name="dietary-${index}" type="text" value="${escapeHtml(previous.dietary || "")}"></label>
       <label>Birthday / Cumpleaños<input name="birthday-${index}" type="text" inputmode="numeric" placeholder="MM/DD" pattern="(0?[1-9]|1[0-2])/(0?[1-9]|[12][0-9]|3[01])" maxlength="5" value="${escapeHtml(previous.birthday || "")}"></label>
+      <label>Email / Correo electrónico<input name="email-${index}" type="email" autocomplete="email" value="${escapeHtml(previous.email || "")}" ${guest.child ? "" : "required"}></label>
     </section>`;
   }).join("")}`;
   const submitButton = responseForm?.querySelector('button[type="submit"]');
@@ -147,13 +147,13 @@ responseForm?.addEventListener("submit", async (event) => {
     attending: form.get(`attending-${index}`),
     dietary: form.get(`dietary-${index}`),
     birthday: form.get(`birthday-${index}`),
+    email: form.get(`email-${index}`),
     welcomeDrinks: guest.welcomeDinnerInvited ? form.get(`welcome-${index}`) : "",
     wedding: form.get(`attending-${index}`),
     brunch: guest.brunchInvited ? form.get(`brunch-${index}`) : ""
   }));
   const submission = {
     action: "submit",
-    email: form.get("email"),
     addressStreet: form.get("addressStreet"),
     addressCity: form.get("addressCity"),
     addressState: form.get("addressState"),

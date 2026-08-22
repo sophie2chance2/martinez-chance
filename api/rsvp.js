@@ -49,7 +49,7 @@ export default async function handler(request, response) {
         clean(entry.meal),
         clean(entry.dietary),
         clean(entry.birthday),
-        clean(body.email),
+        clean(entry.email),
         clean(body.addressStreet),
         clean(body.addressCity),
         clean(body.addressState),
