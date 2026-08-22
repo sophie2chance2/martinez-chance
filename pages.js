@@ -224,7 +224,7 @@ function footer() {
 }
 
 function closing() {
-  return `<section class="closing"><p class="kicker reveal">See you in San Diego / Nos vemos en San Diego</p><h2 class="reveal">Sophie <em>&</em> Ubaldo</h2><a class="primary-button reveal" href="/rsvp/">RSVP / Confirmar asistencia</a><p class="closing-date">04 · 03 · 27</p></section>`;
+  return `<section class="closing"><p class="kicker reveal">See you in San Diego / Nos vemos en San Diego</p><h2 class="reveal"><span>Sophie</span><em>&</em><span>Ubaldo</span></h2><a class="primary-button reveal" href="/rsvp/">RSVP / Confirmar asistencia</a><p class="closing-date">04 · 03 · 27</p></section>`;
 }
 
 function page(number, kicker, title, content, extra = "") {

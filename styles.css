@@ -52,9 +52,10 @@ button { color: inherit; }
 .placeholder-photo--hero { width: 100%; height: 100%; }
 .hero-art__line { position: absolute; left: 48%; top: 0; height: 100%; width: 1px; background: rgba(255,255,255,.12); }
 .hero-copy { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100svh; width: 50vw; padding: 9rem 4vw 6rem; text-align: center; }
-.hero-copy h1 { position: relative; margin: 0; font: 400 clamp(4.8rem, 9.4vw, 9.5rem)/.88 var(--serif); letter-spacing: -.04em; }
+.hero-copy h1 { position: relative; margin: 0; font: 400 clamp(4.8rem, 9.4vw, 9.5rem)/.98 var(--serif); letter-spacing: -.04em; }
 .hero-copy h1 span, .hero-copy h1 em { display: block; }
 .hero-copy h1 span { position: relative; z-index: 2; }
+.hero-copy h1 span:last-child { margin-top: .14em; }
 .hero-copy h1 em { position: absolute; z-index: 1; left: 50%; top: 50%; color: rgba(251,250,246,.24); font-size: 1.18em; font-weight: 400; font-style: italic; line-height: 1; transform: translate(-50%, -52%); }
 .hero-details { display: flex; justify-content: center; gap: 5rem; margin: 3.5rem 0 2rem; font-size: .75rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; }
 .text-button { width: fit-content; padding: .5rem 0; border: 0; border-bottom: 1px solid currentColor; background: transparent; cursor: pointer; font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; }
@@ -174,8 +175,11 @@ button { color: inherit; }
 .answer { display: grid; grid-template-columns: 1fr 1fr; gap: 5vw; max-width: 900px; padding: 0 0 2rem; font-size: .85rem; line-height: 1.7; }
 
 .closing { display: grid; place-items: center; min-height: 92vh; padding: 6rem 2rem; background: var(--green-deep); color: var(--white); text-align: center; }
-.closing h2 { margin: 1rem 0 3rem; font: 400 clamp(4.5rem, 11vw, 11rem)/1.12 var(--serif); letter-spacing: -.04em; }
-.closing h2 em { display: block; font-weight: 400; }
+.closing h2 { position: relative; margin: 1rem 0 3rem; font: 400 clamp(4.5rem, 11vw, 11rem)/.98 var(--serif); letter-spacing: -.04em; }
+.closing h2 span, .closing h2 em { display: block; }
+.closing h2 span { position: relative; z-index: 2; }
+.closing h2 span:last-child { margin-top: .14em; }
+.closing h2 em { position: absolute; z-index: 1; left: 50%; top: 50%; color: rgba(251,250,246,.24); font-size: 1.18em; font-weight: 400; font-style: italic; line-height: 1; transform: translate(-50%, -52%); }
 .primary-button { width: fit-content; border: 1px solid currentColor; border-radius: 100px; padding: 1rem 1.6rem; background: var(--ink); color: var(--white); cursor: pointer; font-size: .7rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; transition: background .25s, color .25s, transform .25s; }
 .primary-button:hover { background: var(--white); color: var(--ink); transform: translateY(-2px); }
 .closing .primary-button { background: transparent; }
