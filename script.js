@@ -134,6 +134,9 @@ function renderHousehold(household) {
       <label>Email / Correo electrónico<input name="email-${index}" type="email" autocomplete="email" value="${escapeHtml(previous.email || "")}" ${guest.child ? "" : "required"}></label>
     </section>`;
   }).join("")}`;
+  $$('input[name^="birthday-"]', responseForm).forEach((input) => {
+    input.addEventListener("input", formatBirthdayInput);
+  });
   const submitButton = responseForm?.querySelector('button[type="submit"]');
   if (submitButton) submitButton.textContent = hasExisting ? "Update RSVP / Actualizar RSVP" : "Send RSVP / Enviar RSVP";
 }
@@ -179,4 +182,16 @@ function escapeHtml(value) {
 
 function selected(value, option) {
   return String(value || "").toLowerCase() === String(option || "").toLowerCase() ? "selected" : "";
+}
+
+function formatBirthdayInput(event) {
+  const input = event.currentTarget;
+  const digits = input.value.replace(/\D/g, "").slice(0, 4);
+  if (digits.length > 2) {
+    input.value = `${digits.slice(0, 2)}/${digits.slice(2)}`;
+  } else if (digits.length === 2 && event.inputType !== "deleteContentBackward") {
+    input.value = `${digits}/`;
+  } else {
+    input.value = digits;
+  }
 }
