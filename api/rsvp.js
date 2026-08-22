@@ -29,7 +29,9 @@ export default async function handler(request, response) {
       const matchedRows = rows.filter((row) => guestMatches(row, query));
       const matchedGroups = new Set(matchedRows.map(groupName).filter(Boolean));
       const groupRows = rows.filter((row) => matchedGroups.has(groupName(row)));
-      return response.status(200).json({ households: groupHouseholds(groupRows) });
+      const households = groupHouseholds(groupRows);
+      const rsvpRows = await readRsvpRows(token, rsvpSheet);
+      return response.status(200).json({ households: applyExistingResponses(households, rsvpRows) });
     }
 
     if (body.action === "submit") {
@@ -61,6 +63,16 @@ export default async function handler(request, response) {
     return response.status(400).json({ error: "Unknown RSVP action." });
   } catch (error) {
     return response.status(500).json({ error: error.message || "Unable to process RSVP." });
+  }
+}
+
+async function readRsvpRows(token, sheetName) {
+  try {
+    return await readRows(token, `${quoteSheet(sheetName)}!A:O`);
+  } catch (error) {
+    const message = String(error.message || "");
+    if (message.includes("Unable to parse range") || message.includes("Unable to parse")) return [];
+    throw error;
   }
 }
 
@@ -129,6 +141,79 @@ function groupHouseholds(rows) {
     });
   });
   return [...groups].map(([household, guests]) => ({ household, guests }));
+}
+
+function applyExistingResponses(households, rsvpRows) {
+  const latestByGuest = new Map();
+  rsvpRows.forEach((row, index) => {
+    const household = row.household || "";
+    const guestName = row.guest_name || row.name || "";
+    const key = responseKey(household, guestName);
+    if (!key) return;
+    const submittedAt = Date.parse(row.submitted_at || row.timestamp || "") || 0;
+    const current = latestByGuest.get(key);
+    if (!current || submittedAt > current.submittedAt || (submittedAt === current.submittedAt && index > current.index)) {
+      latestByGuest.set(key, { row, submittedAt, index });
+    }
+  });
+
+  return households.map((household) => {
+    const guests = household.guests.map((guest) => {
+      const existing = latestByGuest.get(responseKey(household.household, guest.name))?.row;
+      if (!existing) return guest;
+      return {
+        ...guest,
+        existingRsvp: {
+          attending: first(existing, ["attending", "attendance", "wedding"]) || "",
+          welcomeDrinks: first(existing, ["welcome_drinks", "welcome", "welcome_dinner"]) || "",
+          wedding: first(existing, ["wedding", "attending", "attendance"]) || "",
+          brunch: first(existing, ["brunch"]) || "",
+          meal: first(existing, ["meal", "meal_type"]) || "",
+          dietary: first(existing, ["dietary", "dietary_needs"]) || "",
+          birthday: first(existing, ["birthday"]) || "",
+          email: first(existing, ["email", "email_address"]) || "",
+          addressStreet: first(existing, ["address_street", "street_address", "street", "address", "mailing_address", "address_line_1", "address_line1"]) || "",
+          addressCity: first(existing, ["address_city", "city"]) || "",
+          addressState: first(existing, ["address_state", "state"]) || "",
+          addressZip: first(existing, ["address_zip", "zip", "zip_code", "postal_code"]) || ""
+        }
+      };
+    });
+    const latestForHousehold = mergeHouseholdRsvp(guests.map((guest) => guest.existingRsvp).filter(Boolean));
+    return {
+      ...household,
+      hasExistingRsvp: guests.some((guest) => guest.existingRsvp),
+      existingRsvp: latestForHousehold || null,
+      guests
+    };
+  });
+}
+
+function responseKey(household, guestName) {
+  const key = `${normalize(household)}|${normalize(guestName)}`;
+  return key === "|" ? "" : key;
+}
+
+function first(row, keys) {
+  for (const key of keys) {
+    if (row[key]) return row[key];
+  }
+  return "";
+}
+
+function mergeHouseholdRsvp(entries) {
+  if (!entries.length) return null;
+  return {
+    email: firstEntry(entries, "email"),
+    addressStreet: firstEntry(entries, "addressStreet"),
+    addressCity: firstEntry(entries, "addressCity"),
+    addressState: firstEntry(entries, "addressState"),
+    addressZip: firstEntry(entries, "addressZip")
+  };
+}
+
+function firstEntry(entries, key) {
+  return entries.find((entry) => entry[key])?.[key] || "";
 }
 
 function guestMatches(row, query) {

@@ -107,23 +107,35 @@ lookupForm?.addEventListener("submit", async (event) => {
 });
 
 function renderHousehold(household) {
-  $("[data-guest-responses]").innerHTML = household.guests.map((guest, index) => `
+  const existing = household.existingRsvp || {};
+  const hasExisting = Boolean(household.hasExistingRsvp);
+  $("#rsvp-address-street").value = existing.addressStreet || "";
+  $("#rsvp-address-city").value = existing.addressCity || "";
+  $("#rsvp-address-state").value = existing.addressState || "";
+  $("#rsvp-address-zip").value = existing.addressZip || "";
+  $("#rsvp-email").value = existing.email || "";
+  $("[data-guest-responses]").innerHTML = `${hasExisting ? `<p class="form-note rsvp-existing">We found your RSVP. Review your answers below, make any changes, then send your updated response.<br>Encontramos su RSVP. Revisen sus respuestas, hagan cambios y envíen la actualización.</p>` : ""}${household.guests.map((guest, index) => {
+    const previous = guest.existingRsvp || {};
+    return `
     <section class="guest-response" data-guest="${index}">
       <h4>${escapeHtml(guest.name)}</h4>
       <div class="guest-row">
         <label>Saturday · Wedding<br><span class="translation">Sábado · Boda</span>
-          <select name="attending-${index}" required><option value="">Select / Seleccionar</option><option value="Attending">Joyfully attending / Sí asistiré</option><option value="Declined">Unable to attend / No podré asistir</option></select>
+          <select name="attending-${index}" required><option value="">Select / Seleccionar</option><option value="Attending" ${selected(previous.attending || previous.wedding, "Attending")}>Joyfully attending / Sí asistiré</option><option value="Declined" ${selected(previous.attending || previous.wedding, "Declined")}>Unable to attend / No podré asistir</option></select>
         </label>
         ${guest.welcomeDinnerInvited ? `<label>Friday · Welcome dinner<br><span class="translation">Viernes · Cena de bienvenida</span>
-          <select name="welcome-${index}" required><option value="">Select / Seleccionar</option><option value="Attending">Joyfully attending / Sí asistiré</option><option value="Declined">Unable to attend / No podré asistir</option></select>
+          <select name="welcome-${index}" required><option value="">Select / Seleccionar</option><option value="Attending" ${selected(previous.welcomeDrinks, "Attending")}>Joyfully attending / Sí asistiré</option><option value="Declined" ${selected(previous.welcomeDrinks, "Declined")}>Unable to attend / No podré asistir</option></select>
         </label>` : ""}
         ${guest.brunchInvited ? `<label>Sunday · Brunch<br><span class="translation">Domingo · Brunch</span>
-          <select name="brunch-${index}" required><option value="">Select / Seleccionar</option><option value="Attending">Joyfully attending / Sí asistiré</option><option value="Declined">Unable to attend / No podré asistir</option></select>
+          <select name="brunch-${index}" required><option value="">Select / Seleccionar</option><option value="Attending" ${selected(previous.brunch, "Attending")}>Joyfully attending / Sí asistiré</option><option value="Declined" ${selected(previous.brunch, "Declined")}>Unable to attend / No podré asistir</option></select>
         </label>` : ""}
       </div>
-      <label>Dietary needs / Necesidades alimentarias<input name="dietary-${index}" type="text"></label>
-      <label>Birthday / Cumpleaños<input name="birthday-${index}" type="text" inputmode="numeric" placeholder="MM/DD" pattern="(0?[1-9]|1[0-2])/(0?[1-9]|[12][0-9]|3[01])" maxlength="5"></label>
-    </section>`).join("");
+      <label>Dietary needs / Necesidades alimentarias<input name="dietary-${index}" type="text" value="${escapeHtml(previous.dietary || "")}"></label>
+      <label>Birthday / Cumpleaños<input name="birthday-${index}" type="text" inputmode="numeric" placeholder="MM/DD" pattern="(0?[1-9]|1[0-2])/(0?[1-9]|[12][0-9]|3[01])" maxlength="5" value="${escapeHtml(previous.birthday || "")}"></label>
+    </section>`;
+  }).join("")}`;
+  const submitButton = responseForm?.querySelector('button[type="submit"]');
+  if (submitButton) submitButton.textContent = hasExisting ? "Update RSVP / Actualizar RSVP" : "Send RSVP / Enviar RSVP";
 }
 
 responseForm?.addEventListener("submit", async (event) => {
@@ -163,4 +175,8 @@ function escapeHtml(value) {
   return String(value).replace(/[&<>"']/g, (character) => ({
     "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;"
   })[character]);
+}
+
+function selected(value, option) {
+  return String(value || "").toLowerCase() === String(option || "").toLowerCase() ? "selected" : "";
 }
