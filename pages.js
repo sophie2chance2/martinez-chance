@@ -209,7 +209,7 @@ document.querySelector("[data-site-password]")?.addEventListener("submit", (even
 
 function header() {
   return `<header class="site-header ${pageName === "home" ? "" : "page-header"}" data-header>
-    <a class="wordmark" href="/" aria-label="Sophie and Ubaldo home">S <span>+</span> U</a>
+    <a class="wordmark" href="/" aria-label="Sophie and Ubaldo home"><img src="/images/monogram.png" alt="Sophie and Ubaldo monogram"></a>
     <button class="menu-toggle" data-menu-toggle aria-expanded="false" aria-controls="site-nav"><span>Menu</span><i></i><i></i></button>
     <nav class="site-nav" id="site-nav" data-menu>
       ${navigation.map(([slug, label]) => `<a class="${pageName === slug ? "is-current" : ""}" href="/${slug}/">${label}</a>`).join("")}
