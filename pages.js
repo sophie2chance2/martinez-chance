@@ -43,7 +43,6 @@ const pages = {
         </div>
       </section>
       <section class="welcome section-grid">
-        <div class="section-number">01</div>
         <div class="welcome-copy reveal">
           <p class="kicker">You’re invited / Están invitados</p>
           <h2>Come ready to celebrate.</h2>
@@ -153,11 +152,8 @@ const pages = {
       <div class="attire-rule"><span>Please reserve white for the bride.</span><span>Por favor, reserven el blanco para la novia.</span></div>
     </div>
     <div class="mood-board">
-      ${moodPhoto("1.png", -3, "Lavender pleated ruffle gown")}
-      ${moodPhoto("2.png", 2, "Coral tiered ruffle gown")}
-      ${moodPhoto("3.png", -2, "Chartreuse feather-trimmed cape gown")}
-      ${moodPhoto("4.png", 3, "Olive suit with floral embroidered cuffs")}
-      ${moodPhoto("5.png", -1, "Blue patterned tuxedo jacket with black bow tie")}
+      ${moodPhoto("6.jpg", 2, "Creative black tie collage with colorful evening gowns")}
+      ${moodPhoto("7.jpg", -2, "Formal wedding guest attire collage with colorful gowns and suits")}
     </div>`, "section-green"),
 
   registry: page("07", "Registry / Mesa de Regalos", "Your presence<br>is the present.", `
@@ -239,9 +235,9 @@ function page(number, kicker, title, content, extra = "") {
   };
   const photo = pagePhotos[number];
   return `<main id="main" class="inner-page ${extra}">
-    <section class="page-masthead section-grid"><div class="section-number">${number}</div><div class="section-heading reveal"><p class="kicker">${kicker}</p><h1>${title}</h1></div></section>
+    <section class="page-masthead section-grid"><div class="section-heading reveal"><p class="kicker">${kicker}</p><h1>${title}</h1></div></section>
     ${photo ? `<figure class="page-photo reveal"><img src="/images/engagement/selected/${photo[0]}" alt="${photo[1]}"></figure>` : ""}
-    <section class="page-content section-grid"><div class="section-number"></div><div>${content}</div></section>
+    <section class="page-content section-grid"><div>${content}</div></section>
     ${closing()}</main>`;
 }
 
