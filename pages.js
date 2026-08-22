@@ -146,10 +146,10 @@ const pages = {
       <div class="party-column"><h3>Groomsmen</h3><div class="portrait-grid" data-party="groomsmen"></div></div>
     </div>`),
 
-  attire: page("06", "What to Wear / Qué Ponerse", "Funky<br>Formal.", `
+  attire: page("06", "What to Wear / Qué Ponerse", "Colorful<br>Black Tie.", `
     <div class="attire-copy reveal">
-      <p>Bring the color. Wear something that feels like you—and feels ready for a very good dance floor.</p>
-      <p>Traigan el color. Usen algo que se sienta auténtico y listo para una gran pista de baile.</p>
+      <p>Our dress code is colorful black tie: formal silhouettes, rich color, pattern, texture, and personal style. Floor-length dresses, formal jumpsuits, tuxedos, and dark suits are all welcome.</p>
+      <p>Nuestro código de vestimenta es black tie colorido: siluetas formales, colores vivos, estampados, texturas y estilo personal. Vestidos largos, jumpsuits formales, esmóquines y trajes oscuros son bienvenidos.</p>
       <div class="attire-rule"><span>Please reserve white for the bride.</span><span>Por favor, reserven el blanco para la novia.</span></div>
     </div>
     <div class="mood-board">
@@ -157,7 +157,7 @@ const pages = {
       ${moodPhoto("2.png", 2, "Coral tiered ruffle gown")}
       ${moodPhoto("3.png", -2, "Chartreuse feather-trimmed cape gown")}
       ${moodPhoto("4.png", 3, "Olive suit with floral embroidered cuffs")}
-      ${moodPhoto("5.png", -1, "Light blue three-piece suit with patterned lining")}
+      ${moodPhoto("5.png", -1, "Blue patterned tuxedo jacket with black bow tie")}
     </div>`, "section-green"),
 
   registry: page("07", "Registry / Mesa de Regalos", "Your presence<br>is the present.", `
@@ -170,7 +170,7 @@ const pages = {
     <div class="accordion">
       ${faq("Can I bring a plus-one?", "Plus-ones are invited only when named on your invitation.", "Los acompañantes están invitados únicamente cuando aparecen en la invitación.")}
       ${faq("Are children invited?", "We are selectively inviting children. Your RSVP will show every invited member of your household.", "Algunos niños están invitados. El RSVP mostrará a cada persona invitada de su familia.")}
-      ${faq("What is funky formal?", "Formal, expressive, and full of personality. Bring the color and leave white for the bride.", "Formal, expresivo y lleno de personalidad. Traigan el color y reserven el blanco para la novia.")}
+      ${faq("What is colorful black tie?", "Think black tie, but with color encouraged: elevated, formal, expressive, and full of personality. Please reserve white for the bride.", "Piensen en black tie, pero con color: elegante, formal, expresivo y lleno de personalidad. Por favor reserven el blanco para la novia.")}
       ${faq("When should I arrive?", "Please arrive at The Lane at 4:00 PM on Saturday, April 3.", "Por favor lleguen a The Lane a las 4:00 PM el sábado 3 de abril.")}
       ${faq("Can I update my RSVP?", "Yes. Return to RSVP, search your family name, and submit an updated response.", "Sí. Regresen al RSVP, busquen su apellido y envíen una respuesta actualizada.")}
     </div>`, "section-cement"),
