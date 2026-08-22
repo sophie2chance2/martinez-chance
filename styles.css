@@ -37,7 +37,7 @@ button { color: inherit; }
 .site-nav a.is-current { opacity: .55; }
 .site-nav a::after { content: ""; position: absolute; left: 0; right: 100%; bottom: 0; height: 1px; background: currentColor; transition: right .25s; }
 .site-nav a:hover::after { right: 0; }
-.nav-rsvp { border: 1px solid currentColor; border-radius: 100px; padding: .65rem 1rem; background: transparent; cursor: pointer; text-transform: uppercase; }
+.nav-rsvp { display: inline-grid; place-items: center; width: 2.8rem; height: 2.8rem; border: 1px solid currentColor; border-radius: 50%; padding: 0; background: transparent; cursor: pointer; font-size: inherit; line-height: 1; letter-spacing: inherit; text-transform: uppercase; }
 .menu-toggle { display: none; border: 0; background: transparent; color: inherit; cursor: pointer; }
 
 .hero { position: relative; min-height: 100svh; overflow: hidden; background: var(--green); color: var(--white); }
@@ -282,7 +282,7 @@ footer { display: flex; align-items: center; justify-content: space-between; min
   .menu-toggle i { display: block; width: 22px; height: 1px; background: currentColor; transition: transform .25s; }
   .menu-open .menu-toggle i:first-of-type { transform: translateY(3.5px) rotate(45deg); }
   .menu-open .menu-toggle i:last-of-type { transform: translateY(-3.5px) rotate(-45deg); }
-  .nav-rsvp { width: auto !important; margin-top: .65rem; padding: .75rem 1.15rem !important; font: 500 .7rem/1 var(--sans); text-transform: uppercase; }
+  .nav-rsvp { width: 3.05rem !important; height: 3.05rem; margin-top: .65rem; padding: 0 !important; font: 500 .6rem/1 var(--sans); letter-spacing: .03em; text-transform: uppercase; }
   .hero-copy { width: 70vw; }
   .hero-art__frame { right: 3vw; width: 36vw; opacity: .7; }
 }
