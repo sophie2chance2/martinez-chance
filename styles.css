@@ -51,14 +51,14 @@ button { color: inherit; }
 .placeholder-photo span { position: absolute; z-index: 2; bottom: 1.1rem; left: 1.1rem; font-size: .58rem; letter-spacing: .15em; text-transform: uppercase; }
 .placeholder-photo--hero { width: 100%; height: 100%; }
 .hero-art__line { position: absolute; left: 48%; top: 0; height: 100%; width: 1px; background: rgba(255,255,255,.12); }
-.hero-copy { position: relative; z-index: 2; display: flex; flex-direction: column; justify-content: center; min-height: 100svh; width: 58vw; padding: 10rem 0 6rem 7vw; }
-.hero-copy h1 { margin: 0; font: 400 clamp(5.8rem, 12vw, 12rem)/1.12 var(--serif); letter-spacing: -.04em; }
+.hero-copy { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100svh; width: 50vw; padding: 9rem 4vw 6rem; text-align: center; }
+.hero-copy h1 { position: relative; margin: 0; font: 400 clamp(4.8rem, 9.4vw, 9.5rem)/.88 var(--serif); letter-spacing: -.04em; }
 .hero-copy h1 span, .hero-copy h1 em { display: block; }
-.hero-copy h1 em { margin-left: 22%; font-weight: 400; font-style: italic; }
-.hero-copy h1 span:last-child { margin-left: 8%; }
-.hero-details { display: flex; gap: 5rem; margin: 3.5rem 0 2rem 9%; font-size: .75rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; }
+.hero-copy h1 span { position: relative; z-index: 2; }
+.hero-copy h1 em { position: absolute; z-index: 1; left: 50%; top: 50%; color: rgba(251,250,246,.24); font-size: 1.18em; font-weight: 400; font-style: italic; line-height: 1; transform: translate(-50%, -52%); }
+.hero-details { display: flex; justify-content: center; gap: 5rem; margin: 3.5rem 0 2rem; font-size: .75rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; }
 .text-button { width: fit-content; padding: .5rem 0; border: 0; border-bottom: 1px solid currentColor; background: transparent; cursor: pointer; font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; }
-.hero-copy .text-button { margin-left: 9%; color: inherit; }
+.hero-copy .text-button { color: inherit; }
 .text-button span { margin-left: .7rem; }
 .scroll-cue { position: absolute; z-index: 3; left: 4vw; bottom: 2rem; display: flex; align-items: center; gap: .8rem; font-size: .6rem; letter-spacing: .16em; text-transform: uppercase; transform: rotate(-90deg); transform-origin: left center; }
 .scroll-cue i { display: block; width: 40px; height: 1px; background: currentColor; }
@@ -283,7 +283,7 @@ footer { display: flex; align-items: center; justify-content: space-between; min
   .menu-open .menu-toggle i:first-of-type { transform: translateY(3.5px) rotate(45deg); }
   .menu-open .menu-toggle i:last-of-type { transform: translateY(-3.5px) rotate(-45deg); }
   .nav-rsvp { width: 3.05rem !important; height: 3.05rem; margin-top: .65rem; padding: 0 !important; font: 500 .6rem/1 var(--sans); letter-spacing: .03em; text-transform: uppercase; }
-  .hero-copy { width: 70vw; }
+  .hero-copy { width: 58vw; }
   .hero-art__frame { right: 3vw; width: 36vw; opacity: .7; }
 }
 
@@ -298,13 +298,10 @@ footer { display: flex; align-items: center; justify-content: space-between; min
   .hero-art__frame { width: 58vw; height: 40vh; right: -8vw; top: 40vh; transform: rotate(3deg); opacity: .6; }
   .hero-photo { object-position: 55% 70%; }
   .hero-art__line { left: 72%; }
-  .hero-copy { width: 100%; padding: 8rem 1.25rem 5rem; justify-content: flex-start; }
-  .hero-copy h1 { margin-top: 12vh; font-size: clamp(5.6rem, 27vw, 8rem); }
-  .hero-copy h1 em { margin-left: 30%; }
-  .hero-copy h1 span:last-child { margin-left: 5%; }
-  .hero-details { flex-direction: column; gap: .4rem; margin: 3rem 0 2rem 4%; }
+  .hero-copy { width: 100%; padding: 7.5rem 1.25rem 4rem; justify-content: center; }
+  .hero-copy h1 { font-size: clamp(4.4rem, 22vw, 6.8rem); }
+  .hero-details { flex-direction: column; gap: .4rem; margin: 2.5rem 0 2rem; }
   .hero-details p { margin: 0; }
-  .hero-copy .text-button { margin-left: 4%; }
   .scroll-cue { display: none; }
   .bilingual-copy, .attire-copy, .answer { grid-template-columns: 1fr; gap: 1.2rem; }
   .welcome { min-height: auto; }
