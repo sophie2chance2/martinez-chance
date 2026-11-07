@@ -38,7 +38,11 @@ export default async function handler(request, response) {
       const submissions = Array.isArray(body.responses) ? body.responses : [];
       if (!submissions.length) return response.status(400).json({ error: "No guest responses were provided." });
 
-      const values = submissions.map((entry) => [
+      if (submissions.some((entry) => !entry || !normalize(entry.household) || !normalize(entry.guestName))) {
+        return response.status(400).json({ error: "Each response must identify an invited guest and household." });
+      }
+      const uniqueSubmissions = [...new Map(submissions.map((entry) => [responseKey(entry.household, entry.guestName), entry])).values()];
+      const values = uniqueSubmissions.map((entry) => [
         new Date().toISOString(),
         clean(entry.household),
         clean(entry.guestName),
@@ -56,7 +60,7 @@ export default async function handler(request, response) {
         clean(body.addressZip)
       ]);
 
-      await appendRows(token, `${quoteSheet(rsvpSheet)}!A:O`, values);
+      await saveRsvpRows(token, rsvpSheet, values);
       return response.status(200).json({ ok: true });
     }
 
@@ -111,7 +115,32 @@ async function readRows(token, range) {
   const payload = await sheetResponse.json();
   if (!sheetResponse.ok) throw new Error(payload.error?.message || "Could not read guest list.");
   const [headers = [], ...rows] = payload.values || [];
-  return rows.map((row) => Object.fromEntries(headers.map((header, index) => [slug(header), row[index] || ""])));
+  return rows.map((row, index) => ({ ...Object.fromEntries(headers.map((header, column) => [slug(header), row[column] || ""])), sheetRow: index + 2 }));
+}
+
+async function saveRsvpRows(token, sheetName, values) {
+  // Use the same latest-response rule as lookup, including legacy duplicates.
+  const existing = latestResponses(await readRows(token, `${quoteSheet(sheetName)}!A:O`));
+  const updates = [];
+  const additions = [];
+  for (const row of values) {
+    const match = existing.get(responseKey(row[1], row[2]));
+    if (match) {
+      updates.push({ range: `${quoteSheet(sheetName)}!A${match.row.sheetRow}:O${match.row.sheetRow}`, values: [row] });
+    } else {
+      additions.push(row);
+    }
+  }
+  if (updates.length) {
+    const result = await fetch(`https://sheets.googleapis.com/v4/spreadsheets/${process.env.GOOGLE_SHEET_ID}/values:batchUpdate`, {
+      method: "POST",
+      headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
+      body: JSON.stringify({ valueInputOption: "RAW", data: updates })
+    });
+    const payload = await result.json();
+    if (!result.ok) throw new Error(payload.error?.message || "Could not update RSVP.");
+  }
+  if (additions.length) await appendRows(token, `${quoteSheet(sheetName)}!A:O`, additions);
 }
 
 async function appendRows(token, range, values) {
@@ -143,7 +172,7 @@ function groupHouseholds(rows) {
   return [...groups].map(([household, guests]) => ({ household, guests }));
 }
 
-function applyExistingResponses(households, rsvpRows) {
+function latestResponses(rsvpRows) {
   const latestByGuest = new Map();
   rsvpRows.forEach((row, index) => {
     const household = row.household || "";
@@ -157,6 +186,11 @@ function applyExistingResponses(households, rsvpRows) {
     }
   });
 
+  return latestByGuest;
+}
+
+function applyExistingResponses(households, rsvpRows) {
+  const latestByGuest = latestResponses(rsvpRows);
   return households.map((household) => {
     const guests = household.guests.map((guest) => {
       const existing = latestByGuest.get(responseKey(household.household, guest.name))?.row;
