@@ -356,3 +356,20 @@ footer { display: flex; align-items: center; justify-content: space-between; min
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* Secondary-language switch; English content always remains visible. */
+.language-toggle { display: inline-flex; flex-shrink: 0; gap: 2px; padding: 3px; border: 1px solid currentColor; border-radius: 4px; }
+.language-toggle button { padding: .45rem .55rem; border: 0; border-radius: 2px; background: transparent; color: inherit; font-size: .65rem; cursor: pointer; }
+.language-toggle button[aria-pressed="true"] { background: var(--cream); color: var(--green-deep); }
+.language-toggle button:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+.site-header > .language-toggle { margin-left: 1.3rem; }
+.site-header .site-nav { margin-left: auto; }
+.password-gate > .language-toggle { position: absolute; top: 1.5rem; right: 1.5rem; }
+@media (max-width: 1050px) {
+  .site-header > .language-toggle { margin-left: auto; margin-right: 1.25rem; z-index: 2; }
+  .site-header > .menu-toggle { order: 3; }
+}
+@media (max-width: 420px) {
+  .site-header > .language-toggle { margin-right: .65rem; }
+  .language-toggle button { padding: .4rem; font-size: .6rem; }
+}

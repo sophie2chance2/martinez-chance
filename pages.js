@@ -6,6 +6,7 @@ const siteUnlocked = localStorage.getItem("siteUnlocked") === "true";
 
 function gateScreen() {
   return `<main class="password-gate">
+    ${languageControl()}
     <form data-site-password>
       <p class="kicker">Sophie <em>&</em> Ubaldo</p>
       <h1>Enter password<br>Ingresen la contraseña</h1>
@@ -211,6 +212,7 @@ function header() {
       ${navigation.map(([slug, label]) => `<a class="${pageName === slug ? "is-current" : ""}" href="/${slug}/">${label}</a>`).join("")}
       <a class="nav-rsvp ${pageName === "rsvp" ? "is-current" : ""}" href="/rsvp/">RSVP</a>
     </nav>
+    ${languageControl()}
   </header>`;
 }
 
