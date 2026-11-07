@@ -25,7 +25,7 @@ const secondaryTranslations = [
   ],
   [
     "Estamos felices de reunir a nuestra gente favorita para un fin de semana de buena comida, música alegre y una pista de baile muy llena.",
-    "Nous avons hâte de réunir nos proches pour un week-end de bons repas, de musique joyeuse et de danse jusqu’au bout de la nuit."
+    "Nous avons hâte de réunir nos proches pour un week-end de bons repas, de musique entraînante et de fête sur une piste de danse bien remplie."
   ],
   [
     "Nuestra Historia",
@@ -33,7 +33,7 @@ const secondaryTranslations = [
   ],
   [
     "Antes de Ser Novios",
-    "Avant notre histoire d’amour"
+    "Avant d’être ensemble"
   ],
   [
     "El Período de Prueba",
@@ -41,7 +41,7 @@ const secondaryTranslations = [
   ],
   [
     "El Hogar Es Donde Estemos",
-    "Chez nous, c’est là où nous sommes"
+    "Chez nous, c’est partout où nous sommes ensemble"
   ],
   [
     "Hasta Hoy",
@@ -49,15 +49,15 @@ const secondaryTranslations = [
   ],
   [
     "Durante tres años, todos lo veían venir. A nosotros nos tomó tres años darnos cuenta.",
-    "Pendant trois ans, tout le monde l’avait compris. Il nous a fallu trois ans pour nous en rendre compte."
+    "Pendant trois ans, tout le monde l’avait compris avant nous. Il nous a fallu tout ce temps pour nous en rendre compte."
   ],
   [
     "Seis años después, el mismo día exacto, elegimos esa fecha otra vez, esta vez para decir “sí, acepto.”",
-    "Six ans plus tard, jour pour jour, nous avons choisi cette même date, cette fois pour nous dire « oui »."
+    "Six ans plus tard, jour pour jour, nous avons choisi cette même date pour nous dire oui."
   ],
   [
     "Nueve meses, siete países y una perrita maravillosa.",
-    "Neuf mois, sept pays et une chienne merveilleuse."
+    "Neuf mois, sept pays et une adorable petite chienne."
   ],
   [
     "Y ahora, en Walnut Creek, para nuestro próximo capítulo, en nuestro nuevo hogar.",
@@ -85,11 +85,11 @@ const secondaryTranslations = [
   ],
   [
     "Llegada de invitados a las 4:00 PM · The Lane",
-    "Arrivée des invités à 16 h · The Lane"
+    "Arrivée des invités à 16 h · The Lane"
   ],
   [
     "Brunch a las 11:00 AM · Lugar por confirmar",
-    "Brunch à 11 h · Lieu à confirmer"
+    "Brunch à 11 h · Lieu à confirmer"
   ],
   [
     "Los detalles aparecerán para los invitados correspondientes durante el RSVP.",
@@ -105,7 +105,7 @@ const secondaryTranslations = [
   ],
   [
     "Hay taxis y transporte por aplicación disponibles. Más detalles pronto.",
-    "Des taxis et des VTC sont facilement disponibles. Plus de détails à venir."
+    "Vous trouverez facilement des taxis et des VTC. Plus d’informations sur les transports à venir."
   ],
   [
     "La ceremonia, el cóctel y la recepción serán en The Lane.",
@@ -133,7 +133,7 @@ const secondaryTranslations = [
   ],
   [
     "Nuestro código de vestimenta es black tie colorido: siluetas formales, colores vivos, estampados, texturas y estilo personal. Vestidos largos, jumpsuits formales, esmóquines y trajes oscuros son bienvenidos.",
-    "Notre code vestimentaire : tenue de soirée haute en couleur. Coupes élégantes, couleurs vives, motifs, textures et style personnel sont les bienvenus. Robes longues, combinaisons habillées, smokings et costumes sombres sont tous de mise."
+    "Pour ce mariage, place à une tenue de soirée haute en couleur : coupes élégantes, couleurs vives, motifs et jeux de textures. Exprimez votre style ! Robes longues, combinaisons habillées, smokings et costumes sombres sont les bienvenus."
   ],
   [
     "Por favor, reserven el blanco para la novia.",
@@ -161,11 +161,11 @@ const secondaryTranslations = [
   ],
   [
     "Piensen en black tie, pero con color: elegante, formal, expresivo y lleno de personalidad. Por favor reserven el blanco para la novia.",
-    "Imaginez une tenue de soirée où la couleur est à l’honneur : élégante, habillée, expressive et pleine de personnalité. Merci de réserver le blanc à la mariée."
+    "Imaginez une tenue de soirée où la couleur est à l’honneur : élégante, habillée, expressive et pleine de personnalité. Merci de réserver le blanc à la mariée."
   ],
   [
     "Por favor lleguen a The Lane a las 4:00 PM el sábado 3 de abril.",
-    "Merci d’arriver à The Lane à 16 h le samedi 3 avril."
+    "Merci d’arriver à The Lane à 16 h le samedi 3 avril."
   ],
   [
     "Sí. Regresen al RSVP, busquen su apellido y envíen una respuesta actualizada.",
@@ -185,7 +185,7 @@ const secondaryTranslations = [
   ],
   [
     "Ingresen el nombre de cualquier persona de su grupo invitado.",
-    "Saisissez le nom de l’une des personnes de votre groupe invité."
+    "Saisissez le prénom et le nom de l’une des personnes figurant sur votre invitation."
   ],
   [
     "Buscar invitación",
@@ -225,7 +225,7 @@ const secondaryTranslations = [
   ],
   [
     "Estamos felices de celebrar con ustedes.",
-    "Nous avons hâte de célébrer avec vous."
+    "Nous avons hâte de faire la fête avec vous."
   ],
   [
     "Editar respuesta",
@@ -265,7 +265,7 @@ const secondaryTranslations = [
   ],
   [
     "Sí asistiré",
-    "Je serai présent(e)"
+    "Avec plaisir"
   ],
   [
     "No podré asistir",
@@ -273,11 +273,11 @@ const secondaryTranslations = [
   ],
   [
     "Necesidades alimentarias",
-    "Régimes et allergies alimentaires"
+    "Restrictions et allergies alimentaires"
   ],
   [
     "Cumpleaños",
-    "Anniversaire"
+    "Anniversaire (mois/jour)"
   ],
   [
     "Correo electrónico",
@@ -289,19 +289,19 @@ const secondaryTranslations = [
   ],
   [
     "Mucho antes de ser una historia de amor, éramos solo dos nombres que aparecían una y otra vez en las mismas listas. Más de tres años en gobierno estudiantil y juntas directivas, Camp Kesem, Dance Marathon, Rotaract, Associated Students, significaban noches largas en el campus y ninguna versión de la universidad que no incluyera al otro. Compartimos una cerca en Dorothy Lane, un pod de COVID y un viaje al otro lado del mundo, a Medio Oriente y Turquía. Incluso teníamos un plan, mitad broma y mitad en serio, de mudarnos juntos a Sudamérica después de graduarnos. Solo amigos, decíamos. Solo amigos que no podían mantenerse fuera de los planes del otro.",
-    "Bien avant de devenir une histoire d’amour, ce n’étaient que deux noms qui revenaient sans cesse sur les mêmes listes. Plus de trois ans au sein des associations et des conseils étudiants — Camp Kesem, Dance Marathon, Rotaract, Associated Students —, c’était autant de soirées tardives sur le campus et une vie universitaire impossible à imaginer sans l’autre. Nous avons partagé une clôture sur Dorothy Lane, une bulle pendant le COVID et un voyage à l’autre bout du monde, au Moyen-Orient et en Turquie. Nous avions même prévu, à moitié pour rire et à moitié sérieusement, de partir vivre ensemble en Amérique du Sud après nos études. Juste amis, disions-nous. Des amis qui ne pouvaient s’empêcher de s’inviter dans les projets de l’autre."
+    "Bien avant que notre histoire ne devienne une histoire d’amour, nous étions deux noms qui revenaient sans cesse sur les mêmes listes. Pendant plus de trois ans, nos engagements dans la représentation étudiante et les équipes dirigeantes d’associations comme Camp Kesem, Dance Marathon, Rotaract et Associated Students nous ont valu de longues soirées sur le campus. Impossible d’imaginer notre vie universitaire sans l’autre. Nous étions voisins sur Dorothy Lane, de part et d’autre d’une clôture, faisions partie du même petit groupe pendant le confinement et avons voyagé ensemble à l’autre bout du monde, au Moyen-Orient et en Turquie. Nous avions même prévu, à moitié pour rire et à moitié sérieusement, de partir vivre ensemble en Amérique du Sud après nos études. Juste amis, disions-nous. Des amis qui ne pouvaient s’empêcher de s’inviter dans les projets de l’autre."
   ],
   [
     "Tres años de “¿ustedes ya andan?” finalmente nos alcanzaron en un viaje a Tulum: más de veinte amigos, un todo incluido, y un descuento de recién casados que le dio una idea a Ubaldo. “¿Qué tal si sacamos un acta de matrimonio?”, dijo. “Ni siquiera estamos saliendo”, me reí. “Tal vez deberíamos intentarlo”, respondió. Así que lo hicimos: cinco días, sin promesas, con la amistad totalmente protegida por si todo salía mal. No salió mal. Tres semanas después, el último día del viaje, Ubaldo me pidió ser su novia. Doce días después, nos dijimos te amo por primera vez. Esa primavera, nos graduamos juntos de San Diego State. Cuatro meses después de que Ubaldo me lo pidiera, vivíamos en Ciudad de México, sin conocer a nadie más que el uno al otro.",
-    "Après trois ans à entendre « Alors, vous êtes enfin ensemble ? », tout a basculé lors d’un voyage à Tulum : une vingtaine d’amis, un séjour tout compris et une réduction pour jeunes mariés qui a donné une idée à Ubaldo. « Et si on obtenait un acte de mariage ? », a-t-il proposé. « On ne sort même pas ensemble », ai-je répondu en riant. « On pourrait essayer », a-t-il répliqué. Alors nous avons essayé : cinq jours, sans promesses, en préservant notre amitié au cas où les choses tourneraient mal. Ce ne fut pas le cas. Trois semaines plus tard, le tout dernier jour du voyage, Ubaldo m’a demandé d’être sa petite amie. Douze jours après, nous nous sommes dit « je t’aime » pour la première fois. Ce printemps-là, nous avons obtenu ensemble notre diplôme à San Diego State. Quatre mois après sa demande, nous vivions à Mexico, sans connaître personne d’autre que nous deux."
+    "Après trois ans à entendre la même question, « Alors, vous êtes ensemble ? », tout a basculé lors d’un voyage à Tulum : un peu plus de vingt amis, un séjour tout compris et une réduction pour jeunes mariés qui a donné une idée à Ubaldo. « Et si on demandait un certificat de mariage ? », a-t-il proposé. « On ne sort même pas ensemble », ai-je répondu en riant. « On pourrait essayer », a-t-il répliqué. Alors nous avons essayé : cinq jours, sans promesses, en préservant notre amitié au cas où les choses tourneraient mal. Heureusement, tout s’est bien passé. Trois semaines plus tard, le tout dernier jour du voyage, Ubaldo m’a demandé d’être sa petite amie. Douze jours après, nous nous sommes dit « je t’aime » pour la première fois. Ce printemps-là, nous avons obtenu ensemble notre diplôme à San Diego State. Quatre mois après le début de notre relation, nous vivions à Mexico, sans connaître personne d’autre que nous deux."
   ],
   [
     "Pasamos nuestro primer año de novios sin dirección fija y sin ninguna queja. Ciudad de México era nuestra base, pero el hogar también se veía como Michoacán, conociendo a la familia de Ubaldo por primera vez; Oaxaca, para un Día de Acción de Gracias que no necesitó una mesa llena de parientes para sentirse como tal; y Sayulita, donde el mar hablaba por nosotros. Después llegaron Chile, Ecuador, Perú, Colombia y Honduras (este último con quince amigos que de alguna manera también encontraron su lugar en la historia) mientras trabajábamos remotamente desde donde fuera que estuviéramos esa semana. Nueve meses después, regresamos a Bird Rock, San Diego, y un mes más tarde, Mia llegó a casa con nosotros. Poco después, Sophie compró y remodeló un condominio en Mission Valley, el primer lugar que fue de verdad, completamente, solo nuestro.",
-    "Nous avons passé notre première année de couple sans adresse fixe et sans nous en plaindre. Mexico était notre point d’attache, mais nous nous sentions aussi chez nous dans le Michoacán, où j’ai rencontré la famille d’Ubaldo pour la première fois ; à Oaxaca, pour un Thanksgiving qui n’avait pas besoin d’une grande tablée familiale pour en avoir l’esprit ; et à Sayulita, où l’océan parlait pour nous. Puis sont venus le Chili, l’Équateur, le Pérou, la Colombie et le Honduras — ce dernier avec quinze amis qui ont eux aussi trouvé leur place dans l’histoire —, tandis que nous travaillions à distance depuis notre destination du moment. Neuf mois plus tard, nous sommes rentrés à Bird Rock, à San Diego, et un mois après, Mia nous a rejoints à la maison. Peu après, Sophie a acheté et rénové un appartement à Mission Valley : le premier endroit vraiment, entièrement à nous."
+    "Nous avons passé notre première année de couple sans adresse fixe et sans nous en plaindre. Mexico était notre point d’attache, mais nous nous sentions aussi chez nous dans le Michoacán, pour une première rencontre avec la famille d’Ubaldo ; à Oaxaca, pour un Thanksgiving qui n’avait pas besoin d’une grande tablée familiale pour en avoir l’esprit ; et à Sayulita, où l’océan parlait pour nous. Puis nous avons découvert le Chili, l’Équateur, le Pérou, la Colombie et le Honduras, où quinze amis nous ont rejoints pour partager un bout de l’aventure. Nous travaillions à distance depuis l’endroit où nous avions posé nos valises cette semaine-là. Neuf mois plus tard, nous sommes rentrés à Bird Rock, à San Diego, et un mois après, Mia nous a rejoints à la maison. Peu après, Sophie a acheté et rénové un appartement à Mission Valley : le premier endroit vraiment, entièrement à nous."
   ],
   [
     "La maestría trajo hackathons y una nueva red de contactos por toda el Área de la Bahía, lo que le trajo a Sophie un trabajo en una startup de IA en San Francisco, lo que nos trajo de regreso a la costa: más cerca de la familia, más cerca del trabajo, más cerca, resultó ser, de todo lo que no sabíamos que se aproximaba. El 27 de septiembre de 2025, Ubaldo se arrodilló en el Palace of Fine Arts en San Francisco. Sesenta de nuestras personas favoritas ya estaban ahí, escondidas a plena vista, esperando para convertir el momento en una fiesta en cuanto Sophie dijo que sí. En mayo de 2026, compramos una casa en Walnut Creek, el tipo de casa que compras cuando ya sabes hacia dónde va el resto de tu vida.",
-    "Les études supérieures ont apporté des hackathons et de nouvelles rencontres dans toute la baie, puis un emploi pour Sophie dans une startup d’intelligence artificielle à San Francisco. Nous avons donc tous deux remonté la côte, pour nous rapprocher de la famille, du travail et, sans le savoir, de tout ce qui nous attendait. Le 27 septembre 2025, Ubaldo a posé un genou à terre au Palace of Fine Arts de San Francisco. Soixante de nos proches étaient déjà là, cachés à la vue de tous, prêts à transformer cet instant en fête dès que Sophie aurait dit oui. En mai 2026, nous avons acheté une maison à Walnut Creek, le genre de maison que l’on choisit quand on sait déjà où l’on veut passer le reste de sa vie."
+    "Les études supérieures ont apporté des hackathons et de nouvelles rencontres dans toute la région de la baie de San Francisco, puis un emploi pour Sophie dans une startup d’intelligence artificielle à San Francisco. Nous avons donc tous deux remonté la côte, pour nous rapprocher de la famille, du travail et, sans le savoir, de tout ce qui nous attendait. Le 27 septembre 2025, Ubaldo a posé un genou à terre au Palace of Fine Arts de San Francisco. Soixante de nos proches étaient déjà là, sans se faire remarquer, prêts à lancer la fête dès que Sophie dirait oui. En mai 2026, nous avons acheté une maison à Walnut Creek, le genre de maison que l’on choisit quand on sait déjà où l’on veut passer le reste de sa vie."
   ]
 ];
 
